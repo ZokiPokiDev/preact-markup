@@ -16,7 +16,8 @@ export default {
 	globals: {
 		'preact': 'preact',
 		'preact-render-to-string': 'render',
-		'dom-parser': 'DomParser'
+		'dom-parser': 'DomParser',
+		'jsdom': 'jsdom'
 	},
 	plugins: [
 		babel({

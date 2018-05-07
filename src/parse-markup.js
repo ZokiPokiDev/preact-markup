@@ -29,6 +29,7 @@ export default function parseMarkup(markup, type) {
 	if (isNode()) {
 		// doc = parser.parseFromString(wrappedMarkup);
 		doc = new JSDOM(wrappedMarkup);
+		doc = doc.window.document;
 	} else {
 		try {
 			doc = new DOMParser().parseFromString(wrappedMarkup, mime);
