@@ -1,7 +1,7 @@
 {
   "name": "preact-markup",
   "amdName": "preactMarkup",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "description": "Render HTML/XML using VDOM, with Custom Elements mapped to Components.",
   "main": "dist/preact-markup.js",
   "minified:main": "dist/preact-markup.min.js",
@@ -32,9 +32,7 @@
   },
   "homepage": "https://github.com/developit/preact-markup",
   "peerDependencies": {
-    "preact": "preact",
-    "preact-render-to-string": "render",
-    "dom-parser": "DomParser"
+    "preact": "*"
   },
   "optionalDependencies": {
     "preact": "*"
@@ -56,6 +54,7 @@
     "dom-parser": "^0.1.5",
     "eslint": "^3.1.1",
     "gzip-size-cli": "^1.0.0",
+    "jsdom": "^11.10.0",
     "karma": "^1.1.1",
     "karma-chai": "^0.1.0",
     "karma-chai-sinon": "^0.1.5",
