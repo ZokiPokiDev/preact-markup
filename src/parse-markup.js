@@ -1,6 +1,7 @@
 // Zoki Poki code
-let parserDoc;
 import DomParser from 'dom-parser';
+
+let parserDoc;
 const parser = new DomParser();
 
 /** Parse markup into a DOM using the given mimetype.
@@ -79,9 +80,5 @@ function buildParserFrame() {
  *	Adopted from https://github.com/iliakan/detect-node.
  */
 function isNode() {
-	return (
-		Object.prototype.toString.call(
-			typeof process !== 'undefined' ? process : 0 // eslint-disable-line no-undef
-		) === '[object process]')
-		;
+	return (Object.prototype.toString.call(typeof process !== 'undefined' ? process : 0) === '[object process]');
 }

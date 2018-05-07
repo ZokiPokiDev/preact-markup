@@ -1,4 +1,5 @@
-import { h, render, rerender, Component } from 'preact';
+import { h, Component } from 'preact';
+import render from 'preact-render-to-string';
 import assertJsx from 'preact-jsx-chai';
 import sinonChai from 'sinon-chai';
 chai.use(assertJsx);
@@ -63,7 +64,7 @@ describe('Markup', () => {
 	});
 
 	it('should render html', () => {
-		let markup = '<div><x-foo></x-foo><img src="about:blank"></div>';
+		let markup = '<div><x-foo></x-foo><img src="about:blank" /></div>';
 		render(<Markup markup={markup} type="html" />, scratch);
 		expect(scratch.firstChild.innerHTML).to.equal(markup);
 	});
