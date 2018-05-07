@@ -27,7 +27,7 @@ export default function parseMarkup(markup, type) {
 		doc = parser.parseFromString(wrappedMarkup);
 	} else {
 		try {
-			doc = new DOMParser().parseFromString(wrappedMarkup, mime);
+			doc = parser.parseFromString(wrappedMarkup, mime);
 		} catch (err) {
 			parserError = err;
 		}
