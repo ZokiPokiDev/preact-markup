@@ -1,4 +1,5 @@
 import { h as defaultReviver, Component } from 'preact';
+import render from 'preact-render-to-string';
 import markupToVdom from './markup-to-vdom';
 
 let customReviver;

@@ -1,6 +1,5 @@
 // Zoki Poki code
 let parserDoc;
-import render from 'preact-render-to-string';
 import DomParser from 'dom-parser';
 const parser = new DomParser();
 
@@ -9,23 +8,21 @@ const parser = new DomParser();
  */
 export default function parseMarkup(markup, type) {
 	let doc,
-		mime = type==='html' ? 'text/html' : 'application/xml',
+		mime = type === 'html' ? 'text/html' : 'application/xml',
 		parserError, wrappedMarkup, tag;
-		markup = render(markup);
 
 	// wrap with an element so we can find it after parsing, and to support multiple root nodes
-	if (type==='html') {
-		tag = 'body';		
-		wrappedMarkup = '<!DOCTYPE html>\n<html><body>'+markup+'</body></html>';
+	if (type === 'html') {
+		tag = 'body';
+		wrappedMarkup = '<!DOCTYPE html>\n<html><body>' + markup + '</body></html>';
 	}
 	else {
 		tag = 'xml';
-		wrappedMarkup = '<?xml version="1.0" encoding="UTF-8"?>\n<xml>'+markup+'</xml>';
+		wrappedMarkup = '<?xml version="1.0" encoding="UTF-8"?>\n<xml>' + markup + '</xml>';
 	}
 
 	// if available (browser support varies), using DOMPaser in HTML mode is much faster, safer and cleaner than injecting HTML into an iframe.
 	if (isNode()) {
-		console.log('PLUGIN IN SERVER SIDE RENDERING');
 		doc = parser.parseFromString(wrappedMarkup);
 	} else {
 		try {
@@ -35,7 +32,7 @@ export default function parseMarkup(markup, type) {
 		}
 
 		// fall back to using an iframe to parse HTML (not applicable for XML, since DOMParser() for XML works in IE9+):
-		if (!doc && type==='html') {
+		if (!doc && type === 'html') {
 			doc = parserDoc || (parserDoc = buildParserFrame());
 			doc.open();
 			doc.write(wrappedMarkup);
@@ -54,7 +51,7 @@ export default function parseMarkup(markup, type) {
 	}
 
 	// pluck out parser errors
-	if (fc && String(fc.nodeName).toLowerCase()==='parsererror') {
+	if (fc && String(fc.nodeName).toLowerCase() === 'parsererror') {
 		// remove post/preamble to get just the error message as text
 		fc.removeChild(fc.firstChild);
 		fc.removeChild(fc.lastChild);
@@ -86,5 +83,5 @@ function isNode() {
 		Object.prototype.toString.call(
 			typeof process !== 'undefined' ? process : 0 // eslint-disable-line no-undef
 		) === '[object process]')
-	;
+		;
 }
