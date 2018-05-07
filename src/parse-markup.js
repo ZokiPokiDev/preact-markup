@@ -1,5 +1,6 @@
 // Zoki Poki code
 let parserDoc;
+import render from 'preact-render-to-string';
 import DomParser from 'dom-parser';
 const parser = new DomParser();
 
@@ -10,10 +11,11 @@ export default function parseMarkup(markup, type) {
 	let doc,
 		mime = type==='html' ? 'text/html' : 'application/xml',
 		parserError, wrappedMarkup, tag;
+		markup = render(markup);
 
 	// wrap with an element so we can find it after parsing, and to support multiple root nodes
 	if (type==='html') {
-		tag = 'body';
+		tag = 'body';		
 		wrappedMarkup = '<!DOCTYPE html>\n<html><body>'+markup+'</body></html>';
 	}
 	else {
@@ -23,6 +25,7 @@ export default function parseMarkup(markup, type) {
 
 	// if available (browser support varies), using DOMPaser in HTML mode is much faster, safer and cleaner than injecting HTML into an iframe.
 	if (isNode()) {
+		console.log('PLUGIN IN SERVER SIDE RENDERING');
 		doc = parser.parseFromString(wrappedMarkup);
 	} else {
 		try {

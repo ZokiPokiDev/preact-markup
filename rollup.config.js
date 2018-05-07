@@ -13,6 +13,11 @@ export default {
 	moduleName: pkg.amdName,
 	format: 'umd',
 	external,
+	globals: {
+		'preact': 'preact',
+		'preact-render-to-string': 'render',
+		'dom-parser': 'DomParser'
+	},
 	plugins: [
 		babel({
 			babelrc: false,

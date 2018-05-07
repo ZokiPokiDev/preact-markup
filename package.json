@@ -32,7 +32,9 @@
   },
   "homepage": "https://github.com/developit/preact-markup",
   "peerDependencies": {
-    "preact": "*"
+    "preact": "preact",
+    "preact-render-to-string": "render",
+    "dom-parser": "DomParser"
   },
   "optionalDependencies": {
     "preact": "*"
@@ -68,6 +70,7 @@
     "phantomjs-prebuilt": "^2.1.7",
     "preact": "^5.6.0",
     "preact-jsx-chai": "^1.5.0",
+    "preact-render-to-string": "^3.7.0",
     "pretty-bytes-cli": "^1.0.0",
     "rollup": "^0.34.1",
     "rollup-plugin-babel": "^2.4.0",
