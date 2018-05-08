@@ -1,7 +1,7 @@
 {
   "name": "preact-markup",
   "amdName": "preactMarkup",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "description": "Render HTML/XML using VDOM, with Custom Elements mapped to Components.",
   "main": "dist/preact-markup.js",
   "minified:main": "dist/preact-markup.min.js",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/developit/preact-markup.git"
+    "url": "https://github.com/ZokiPokiDev/preact-markup.git"
   },
   "bugs": {
     "url": "https://github.com/developit/preact-markup/issues"

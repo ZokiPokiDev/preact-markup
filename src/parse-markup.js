@@ -1,11 +1,12 @@
 // Zoki Poki code
-import DomParser from 'dom-parser';
+
+// import DomParser from 'dom-parser';
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
 let parserDoc;
-const parser = new DomParser();
+// const parser = new DomParser();
 
 /** Parse markup into a DOM using the given mimetype.
  *	@param {String} markup
@@ -28,7 +29,10 @@ export default function parseMarkup(markup, type) {
 	// if available (browser support varies), using DOMPaser in HTML mode is much faster, safer and cleaner than injecting HTML into an iframe.
 	if (isNode()) {
 		// doc = parser.parseFromString(wrappedMarkup);
-		doc = new JSDOM(wrappedMarkup);
+		doc = new JSDOM(wrappedMarkup, {
+			contentType: mime
+		});
+		console.log(doc);
 		doc = doc.window.document;
 	} else {
 		try {
