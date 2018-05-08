@@ -17,7 +17,8 @@ export default {
 		'preact': 'preact',
 		'preact-render-to-string': 'render',
 		'dom-parser': 'DomParser',
-		'jsdom': 'jsdom'
+		'jsdom': 'jsdom',
+		"fela-dom": "renderToMarkup"
 	},
 	plugins: [
 		babel({

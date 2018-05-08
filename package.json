@@ -1,7 +1,7 @@
 {
   "name": "preact-markup",
   "amdName": "preactMarkup",
-  "version": "1.6.6",
+  "version": "1.6.7",
   "description": "Render HTML/XML using VDOM, with Custom Elements mapped to Components.",
   "main": "dist/preact-markup.js",
   "minified:main": "dist/preact-markup.min.js",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ZokiPokiDev/preact-markup.git"
+    "url": "https://github.com/developit/preact-markup.git"
   },
   "bugs": {
     "url": "https://github.com/developit/preact-markup/issues"
@@ -35,7 +35,7 @@
     "preact": "preact",
     "preact-render-to-string": "render",
     "dom-parser": "DomParser",
-    "jsdom": "jsdom"
+    "html-dom-parser": "Parser"
   },
   "optionalDependencies": {
     "preact": "*"
@@ -57,6 +57,7 @@
     "dom-parser": "^0.1.5",
     "eslint": "^3.1.1",
     "gzip-size-cli": "^1.0.0",
+    "html-dom-parser": "^0.1.3",
     "karma": "^1.1.1",
     "karma-chai": "^0.1.0",
     "karma-chai-sinon": "^0.1.5",
@@ -78,7 +79,6 @@
     "sinon": "^1.17.4",
     "sinon-chai": "^2.8.0",
     "uglify-js": "^2.6.2",
-    "webpack": "^1.13.1",
-    "jsdom": "^11.10.0"
+    "webpack": "^1.13.1"
   }
 }
